@@ -1,0 +1,26 @@
+---
+tags: [daily]
+---
+
+---
+tags: [daily]
+date: <% tp.date.now("YYYY-MM-DD") %>
+week: <% tp.date.now("gggg-[W]ww") %>
+---
+
+# <% tp.date.now("YYYY-MM-DD dddd") %> Daily
+
+## 今日目标
+- [ ] 
+
+## 关键产出
+- [ ] 
+
+## 遇到问题
+- [ ] 
+
+## 待办任务
+```tasks
+not done
+due on <% tp.date.now("YYYY-MM-DD") %>
+path includes Daily

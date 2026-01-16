@@ -1,0 +1,31 @@
+# Obsidian 插件和缓存
+.obsidian/plugins/
+.obsidian/workspace
+.obsidian/workspace-mobile
+.obsidian/app.json
+.obsidian/live-sync/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 临时文件
+*.tmp
+*.bak
+*~
+*.base
+未命名*
+
+# 日志文件
+livesync_log_*.md
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 图片和附件（如果太大可以取消注释）
+# *.jpg
+# *.png
+# *.pdf

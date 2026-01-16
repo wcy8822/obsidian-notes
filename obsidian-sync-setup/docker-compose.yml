@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  couchdb:
+    image: couchdb:3.3.3
+    container_name: obsidian-livesync
+    restart: unless-stopped
+
+    environment:
+      # ⚠️ 请修改为你的强密码（至少16位，包含大小写字母、数字、特殊字符）
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=ChangeThisToStrongPassword123!
+
+      # 时区设置（北京时间）
+      - TZ=Asia/Shanghai
+
+      # CouchDB配置
+      - COUCHDB_SECRET=ChangeThisRandomSecret456!
+
+    ports:
+      # 映射CouchDB端口到宿主机
+      # 格式：宿主机端口:容器端口
+      - "5984:5984"
+
+    volumes:
+      # 数据持久化目录
+      - ./data:/opt/couchdb/data
+      # 配置文件目录
+      - ./config:/opt/couchdb/etc/local.d
+      # 初始化配置
+      - ./init.ini:/opt/couchdb/etc/local.d/init.ini:ro
+
+    healthcheck:
+      # 健康检查：确保CouchDB正常运行
+      test: ["CMD", "curl", "-f", "http://localhost:5984/_up"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    networks:
+      - obsidian-net
+
+    # 资源限制（可选，防止占用过多资源）
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+
+networks:
+  obsidian-net:
+    driver: bridge
+
+# 使用说明：
+# 1. 修改COUCHDB_PASSWORD和COUCHDB_SECRET为强密码
+# 2. 确保./data和./config目录有写权限
+# 3. 启动：docker-compose up -d
+# 4. 查看日志：docker-compose logs -f
+# 5. 停止：docker-compose down
+# 6. 访问管理界面：http://NAS_IP:5984/_utils

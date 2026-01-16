@@ -1,0 +1,50 @@
+Obsidian LiveSync on 绿联云NAS - 文件清单
+===========================================
+
+核心配置文件
+------------
+✅ docker-compose.yml          CouchDB容器配置（需修改密码）
+✅ init.ini                    CouchDB初始化配置
+✅ obsidian-livesync-config-template.json  Obsidian插件配置模板
+
+部署脚本
+--------
+✅ setup_nas.sh                一键部署脚本（可执行）
+✅ monitor.sh                  监控和诊断脚本（可执行）
+
+文档
+----
+✅ README.md                   完整部署文档（详细指南）
+✅ QUICKSTART.md               快速上手指南（30分钟速成）
+✅ TROUBLESHOOTING.md          故障排查手册（问题诊断）
+✅ FILE_LIST.txt               本文件（文件清单）
+
+生成的文件（部署后）
+-------------------
+⏳ CONFIG_INFO.txt             配置信息（含密码，部署后自动生成）
+⏳ data/                       CouchDB数据目录（部署后自动生成）
+⏳ config/                     CouchDB配置目录（部署后自动生成）
+
+使用流程
+--------
+1. 上传所有文件到NAS: /volume1/docker/obsidian-sync-setup/
+2. SSH连接到NAS
+3. 运行: sudo bash setup_nas.sh
+4. 按照QUICKSTART.md配置客户端
+5. 享受实时同步！
+
+需要修改的文件
+--------------
+- docker-compose.yml: 修改COUCHDB_PASSWORD和COUCHDB_SECRET
+- obsidian-livesync-config-template.json: 修改URI和密码
+  （也可以使用setup_nas.sh自动配置）
+
+文件权限
+--------
+setup_nas.sh: 755 (可执行)
+monitor.sh: 755 (可执行)
+其他文件: 644 (普通文件)
+
+总文件大小
+----------
+ 92K	.
