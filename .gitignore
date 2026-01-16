@@ -29,3 +29,7 @@ __pycache__/
 # *.jpg
 # *.png
 # *.pdf
+
+# 敏感信息文件
+Clippings/ChatGPT-API-信息.md
+Inbox/AI/API.md
