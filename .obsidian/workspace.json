@@ -160,13 +160,23 @@
               "icon": "lucide-list",
               "title": "欢迎 的大纲"
             }
+          },
+          {
+            "id": "236aad569605250d",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,11 +186,13 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "ab544777623a1fce",
   "lastOpenFiles": [
+    "OBSIDIAN-GIT-SETUP.md",
     "未命名 1.base",
     "未命名.base",
     "Clippings/Claude-开发环境安装方案.md",
@@ -194,7 +206,6 @@
     "Projects/_Active/商户画像/需求/Icon\r",
     "Projects/_Incubator/非油品/方案草稿/Icon\r",
     "Projects/_Active/商户画像/标签清洗系统/Icon\r",
-    "Projects/_Active/商户画像/铁橙/Icon\r",
     "Clippings/ChatGPT-提示词-AI约束.md",
     "Clippings/ChatGPT-提示词-Codex.md",
     "Clippings/ChatGPT-AI协作手册.md",
